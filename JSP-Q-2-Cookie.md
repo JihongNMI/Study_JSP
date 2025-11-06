@@ -1,4 +1,4 @@
-```
+```mermaid
 sequenceDiagram
     participant Browser
     participant JSPServer
