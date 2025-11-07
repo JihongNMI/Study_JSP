@@ -1,5 +1,7 @@
 # 1. Tourist 개선 방법
 
+## 0. 아. WEB-INF/lib/안에 ojdbc11.jar가 있어야 되요~
+
 ## 1. src/main/java/common에 DBConnPool.java를 준비
 
 ```java
