@@ -19,7 +19,7 @@ public class DBConnPool {
 
 <GlobalNamingResources> 태그 내부에 <Resource> 태그로 DB 정보가 정의되어 있을 수 있습니다. 
 
-```jsp
+```xml
   <GlobalNamingResources>
     <!-- Editable user database that can also be used by
          UserDatabaseRealm to authenticate users
@@ -40,6 +40,17 @@ public class DBConnPool {
               password="1234" />
     
   </GlobalNamingResources>
+
+```
+
+## 2-1. 야 이것도 까먹고 있었다야 context.xml도 수정
+
+
+```xml
+
+        <ResourceLink global="dbcp_myoracle" name="dbcp_myoracle" 
+                  type="javax.sql.DataSource"/>
+    
 
 ```
 
