@@ -46,7 +46,7 @@ public class DBConnPool {
 
 ## 3. 회원가입 join.jsp 의 밑준비
 
-<form action="joinProcess.jsp" class="appForm"> 안에 각종 input들, name="emailID", "password" 등 정비
+<form action="joinProcess.jsp" class="appForm"> 안에 각종 input들, name="emailID", "password" 등을 쳐서 정비
 
 ## 4. joinProcess.jsp 작성
 
