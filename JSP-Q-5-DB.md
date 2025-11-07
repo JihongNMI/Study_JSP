@@ -15,7 +15,7 @@ public class DBConnPool {
 
 ```
 
-## 2. 이건 까먹고 있었는데 처음에 이걸 해놔서 모든 서버에 적용된다...Tomcat 설치 폴더 내의 conf/server.xml
+## 2. 이건 까먹고 있었는데 처음에 이걸 해놔서 모든 서버에 적용된다...Tomcat 설치 폴더 내의 conf/server.xml에 추가
 
 <GlobalNamingResources> 태그 내부에 <Resource> 태그로 DB 정보가 정의되어 있을 수 있습니다. 
 
@@ -43,7 +43,7 @@ public class DBConnPool {
 
 ```
 
-## 2-1. 야 이것도 까먹고 있었다야 context.xml도 수정
+## 2-1. 야 이것도 까먹고 있었다야 context.xml도 추가
 
 
 ```xml
