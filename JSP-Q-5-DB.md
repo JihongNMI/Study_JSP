@@ -91,11 +91,17 @@ public class DBConnPool {
 	cp.psmt.setString(6, gender);
 	cp.psmt.setString(7, content);
 	
+
+	cp.psmt.executeUpdate();
 	
-	int inResult = cp.psmt.executeUpdate();
+	
+	/* int inResult = cp.psmt.executeUpdate();
 	out.println(inResult + "행이 입력되었습니다.");
-	
+	*/
+
 	cp.close();
+	
+	response.sendRedirect("login.jsp");
 		
 %>
 
