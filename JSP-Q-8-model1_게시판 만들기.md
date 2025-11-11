@@ -69,7 +69,7 @@ java 밑에 model1 패키지 만들고
    원래 SQL쿼리문에 FROM board를 여기서 쓰는 보드DB 이름으로 바꿔야 한다.(from tourist_board)
 
 3. notice_list.jsp : 해왔던거
-   - <jsp:include page="header.jsp" />,랑 <jsp:include page="footer.jsp" /> 를 대체해서 넣는다
+   - <jsp:include page="header.jsp" />,랑 <jsp:include page="footer.jsp" /> 를 대체해서 넣는다(<jsp:include page="quicklink.jsp" />)도 있어요~)
 
 # 1-1. 목록 보기 with 검색
 notice_list.jsp
@@ -90,5 +90,12 @@ notice_list.jsp
 > 원래 없어서 제목만 할려다가 그거 다시 조절해야돼서(그래서 검색 안됐음)
 > select 태그(searchField 값을 받게 함) 추가하니까 잘 됨
 
+
+# 3. 상세보기(순서 좀 바꿈)
+
+
+
 # 2. 글쓰기 with 로그인
-login.jsp를 손 봐야 한다
+login.jsp를 손 봐야 한다. tourist는 원래 로그인이 하드코딩(맞음)으로 되어있어서 이걸 db조회식으로 바꿔야 한다.
+
+
