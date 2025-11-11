@@ -93,9 +93,33 @@ notice_list.jsp
 
 # 3. 상세보기(순서 좀 바꿈)
 
+BoardDAO.java
+여기서는 이걸 바꿔야 한다 조인하는거 컬럼 이름 틀리지 않았는지 확인
+```sql
+String query = "SELECT B.*, M.name "
+				+ " FROM tourist_member M INNER JOIN tourist_board B "
+				+ " ON M.email_id = B.id "
+				+ " WHERE num=?";
+```
+
+notice_view.jsp
+로그인 정보 관련은 예제에선 <jsp:include page="../common/Link.jsp" />로 표현되어 있는데, 
+
+tourist에서는 header.jsp에 있으니 이건 안 넣어도 되고, 추후에 거길 고쳐야 한다.
+
+첫 코드를 복붙해오는데, 구조가 이렇다. [일련번호 받고 DAO생성, 조회수 증가, 일련번호로 DB에서 내용 가져오기, DB닫기]
+
+이 폼이라는거 결국 테이블로 만들어진거라서
+
+원래는 번호 작성자 작성일 조회수 제목 내용 이 구성인데
+
+여기서는 제목 작성일 조회수 내용만 나오면 되고, 그거에 맞춰서 구성 수정을 해야한다
+
+
+
+---
 
 
 # 2. 글쓰기 with 로그인
 login.jsp를 손 봐야 한다. tourist는 원래 로그인이 하드코딩(맞음)으로 되어있어서 이걸 db조회식으로 바꿔야 한다.
-
 
