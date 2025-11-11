@@ -1,7 +1,7 @@
 #  수정방안
 그러니까... 게시판을 만드는 기능임
-1. 목록 보기
-2. 글쓰기
+1. 목록 보기 with 검색
+2. 글쓰기 with 로그인
 3. 상세 보기
 4. 수정하기
 5. 삭제하기
@@ -71,7 +71,7 @@ java 밑에 model1 패키지 만들고
 3. notice_list.jsp : 해왔던거
    - <jsp:include page="header.jsp" />,랑 <jsp:include page="footer.jsp" /> 를 대체해서 넣는다
 
-# 1-1. 목록 보기
+# 1-1. 목록 보기 with 검색
 notice_list.jsp
    - 도데체 표를 어떻게 생성했는지 궁금했는데, 별거 아니고 table 안에, thead는 먼저 만들고, tbody를 반복문으로 만드는 것이였다. 이 부분을 수정하면 된다.
      - for(BoardDTO dto : boardLists){ 로 해서 <%=dto.getNum()%>"> <%=dto.getTitle() %> 이런 식으로 만든다. 자세한건 코드 참고...
@@ -90,4 +90,5 @@ notice_list.jsp
 > 원래 없어서 제목만 할려다가 그거 다시 조절해야돼서(그래서 검색 안됐음)
 > select 태그(searchField 값을 받게 함) 추가하니까 잘 됨
 
-# 2. 
+# 2. 글쓰기 with 로그인
+login.jsp를 손 봐야 한다
