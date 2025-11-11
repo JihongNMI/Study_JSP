@@ -82,7 +82,7 @@ notice_list.jsp
 # 1-2. 검색은 어떻게하지?
 notice_list.jsp
 
-폼태그 안에 input 텍스트 태그 안에는, name="searchWord" 추가하고, 버튼은 input type="submit"로 한다
+폼태그 안에 input 텍스트 태그 안에는, **name="searchWord" 추가**하고, 버튼은 **input type="submit"로 한다**
 
 음 왜 안돼지...
 
