@@ -6,7 +6,50 @@
 4. 수정하기
 5. 삭제하기
 
-# 0. 밑준비
+# 0. 밑준비 : SQL
+
+1. 게시판 db를 만든다
+```sql
+CREATE TABLE TOURIST_BOARD(
+	num NUMBER PRIMARY KEY,
+	title VARCHAR2(200) NOT NULL,
+	content VARCHAR2(2000) NOT NULL,
+	postdate DATE DEFAULT sysdate NOT NULL,
+	visitcount NUMBER(6),
+	id VARCHAR2(100) NOT NULL
+);
+
+```
+2. 외부키를 설정한다(회원정보db의 id(주키)에 외래키로서 연결함 -> 이 안에 있는 아이디들만 가능하게 만듬)
+```sql
+ALTER TABLE TOURIST_BOARD
+	ADD CONSTRAINT tourist_board_mem_fk FOREIGN KEY(id)
+	REFERENCES tourist_member(email_id);
+```
+3. 게시판번호용 시퀀스 생성
+```sql
+CREATE SEQUENCE seq_tourist_board_num
+	INCREMENT BY 1
+	START WITH 1
+	MINVALUE 1
+	NOMAXVALUE
+	NOCYCLE
+	NOCACHE;
+```
+4. 적당한 값을 집어넣어 둔다
+```sql
+INSERT INTO tourist_board(num, title, content, id, postdate, visitcount)
+VALUES (seq_tourist_board_num.nextval, '이번 여름 휴가 제주 갈까? 미션 투어 (여행경비 50만원 지원)','내용1','aaa',sysdate, 0);
+
+INSERT INTO tourist_board(num, title, content, id, postdate, visitcount)
+VALUES (seq_tourist_board_num.nextval, '박물관 미션 투어 응모 당첨자 발표','내용2','aaa',sysdate, 0);
+
+INSERT INTO tourist_board(num, title, content, id, postdate, visitcount)
+VALUES (seq_tourist_board_num.nextval, '추석 연휴 티켓/투어 배송 및 직접 수령 안내','내용3','aaa',sysdate, 0);
+```
+
+
+# 0. 밑준비 : jsp
 java 밑에 model1 패키지 만들고
 1. BoardDTO 를 복붙
 2. BoardDAO 를 복붙
