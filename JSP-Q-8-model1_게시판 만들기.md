@@ -8,9 +8,8 @@
 
 # 0. 밑준비
 java 밑에 model1 패키지 만들고
-1. BoardDTO
-2. BoardDAO
-   를 복붙
+1. BoardDTO 를 복붙
+2. BoardDAO 를 복붙
 
 1. DTO : 에서는 쓰는 변수 정리(게시판DB 구성 칼럼)하면 된다. 복사한건 name 쓰는데 여긴 없어서 name 관련해서 지웠다.
 2. DAO : DAO안에
