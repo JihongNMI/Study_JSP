@@ -212,6 +212,43 @@ login.jsp를 손 봐야 한다. 그전에 loginProcess.jsp도 만들고, MemberD
 
 나는 loginProcess부터 만들려고 했는데, 순서 따라서 DAO랑 DTO부터 만들자
 
+```DAO
+package member;
+
+import common.DBConnPool;
+
+public class MemberDAO extends DBConnPool{
+	public MemberDTO login(MemberDTO param) {
+		MemberDTO dto = new MemberDTO();
+		try {
+			String query = "SELECT * FROM tourist_member "
+						+ " WHERE email_id=? AND password=? ";
+			psmt = con.prepareStatement(query);
+			psmt.setString(1, param.getEmail_id());
+			psmt.setString(2, param.getPassword());
+			rs = psmt.executeQuery();
+			if(rs.next()) {
+				dto.setEmail_id(rs.getString("email_id"));
+				dto.setEmail_address(rs.getString("email_address"));
+				dto.setName(rs.getString("name"));
+				dto.setPassword(rs.getString("password"));
+				dto.setTel(rs.getString("tel"));
+				dto.setGender(rs.getString("gender"));
+				dto.setAgree(rs.getString("agree"));
+				dto.setContent(rs.getString("content"));
+				dto.setRegidate(rs.getDate("regidate"));
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		return dto;
+	}
+}
+
+```
+
+
+
 loginProcess.jsp
 ```
 <!-- 3. loginProcess : 임포트하고   -->
@@ -249,5 +286,7 @@ loginProcess.jsp
 %>
 ```
 원래 이렇게 하드코딩되어있는걸 고쳐야 한다. db조회식으로 바꿔야 한다.
+
+
 
 ✔ 구조 : jsp의 id, pw -> loginprocess.jsp 의 request.getparameter(id,pw) -> DAO안에 getmemberDTO로 SQL조회 후 일치하면 그 값을 반환 -> 일치하면 세션에 id, 이름을 넣고 redirect
