@@ -208,5 +208,44 @@ dto.setVisitcount(rs.getString(5)); 6에서 5로 수정
 
 
 # 2. 글쓰기 with 로그인
-login.jsp를 손 봐야 한다. tourist는 원래 로그인이 하드코딩(맞음)으로 되어있어서 이걸 db조회식으로 바꿔야 한다.
+login.jsp를 손 봐야 한다. 그전에 loginProcess.jsp도 만들고, MemberDAO랑 MemberDTO클래스도 만들어야 한다.
 
+loginProcess.jsp
+```
+<!-- 3. loginProcess : 임포트하고   -->
+
+<%@page import="utils.JSFunction"%>
+<%@page import="utils.CookieManager"%>
+
+
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%
+	String id = request.getParameter("id");
+	String pw = request.getParameter("pw");
+	
+	String save_check = request.getParameter("save_check");
+	
+	if(id.equals("must") && pw.equals("1234")){
+		
+// 4. loginProcess : 쿠기 관련 내용 추가, 체크박스의 equals의 기본은 "on"이라 그거 수정
+		
+		if(save_check != null && save_check.equals("on")){
+			CookieManager.makeCookie(response, "loginId", id, 86400);
+		}else{
+			CookieManager.deleteCookie(response, "loginId");
+		}
+		
+		
+		
+		session.setAttribute("user_id", id);
+		response.sendRedirect("index.jsp");
+	}else{
+		request.getRequestDispatcher("login.jsp?loginErr=1")
+			.forward(request, response);
+	}
+%>
+```
+원래 이렇게 하드코딩되어있는걸 고쳐야 한다. db조회식으로 바꿔야 한다.
+
+✔ 구조 : jsp의 id, pw -> loginprocess.jsp 의 request.getparameter(id,pw) -> DAO안에 getmemberDTO로 SQL조회 후 일치하면 그 값을 반환 -> 일치하면 세션에 id, 이름을 넣고 redirect
