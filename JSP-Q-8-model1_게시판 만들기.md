@@ -403,3 +403,4 @@ notice_list.jsp
 > <%if(session.getAttribute("UserId") != null && session.getAttribute("UserId").toString().equals(dto.getId())){%>
 > > 마찬가지로 user_id로 고친다
 
+## 4-2. 이제 edit.jsp랑 editProcess.jsp를 만들자
