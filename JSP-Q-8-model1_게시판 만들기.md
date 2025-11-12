@@ -403,4 +403,32 @@ notice_list.jsp
 > <%if(session.getAttribute("UserId") != null && session.getAttribute("UserId").toString().equals(dto.getId())){%>
 > > 마찬가지로 user_id로 고친다
 
+바로 안돼서 확인하는걸 추가로 만들어봄
+
+```jsp
+			<%if(session.getAttribute("user_id") != null
+						&& session.getAttribute("user_id").toString().equals(dto.getId())){%>
+				<button type="button"
+					onclick="location.href='Edit.jsp?num=<%=dto.getNum()%>';">
+					수정하기
+				</button>
+						
+				<button type="button" onclick="deletePost();">
+					삭제하기
+				</button>	
+				
+				<% } else { 
+					
+				    String userId = (String) session.getAttribute("user_id");
+				    String postId = dto.getId();
+
+				    // 세션 값과 게시글 작성자 id 출력
+				    System.out.println("User ID (Session): " + userId);
+				    System.out.println("Post ID (DTO): " + postId);
+				
+				%>
+
+			<%} %>
+```
+
 ## 4-2. 이제 edit.jsp랑 editProcess.jsp를 만들자
