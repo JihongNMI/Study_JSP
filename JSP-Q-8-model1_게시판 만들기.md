@@ -61,18 +61,18 @@ BoardDTO, BoardDAO : java 밑에 model1 패키지 만들고 BoardDTO, BoardDAO �
 2. DAO : DAO안에
    - selectCount : 게시물 개수 세기. 왜 세느냐? 10개 있다고 치면 검색했을 때 5개가 나오게 다시 세야하기 때문
    - selectList : 게시물 목록 가져오기. 얘도 검색하면 따로 SQL 쿼리로 가져오게 하는 기능이 포함됨, jsp에 for문써서 테이블 만드는 것도 해야함
-   - insertWrite
-   - selectView
-   - updateVisitCount
-   - updateEdit
-   - deletePost
-  
-   가 있다.(많이도 있다...)
+   - insertWrite : 게시물 글 쓰는 기능
+   - selectView : 게시물 글 보는 기능, 이너조인을 써서 글번호, 제목, 내용, 올린날짜, ID, 조회수, 그리고 회원 테이블에서 이름을 가져와서, 이걸 토대로 보여줌
+   - updateVisitCount : 조회수 1 증가 기능
+   - updateEdit : 게시물 글 편집 기능
+   - deletePost : 게시물 글 삭제 기능
 
-   원래 SQL쿼리문에 FROM board를 여기서 쓰는 보드DB 이름으로 바꿔야 한다.(from tourist_board)
+가 있다.(많이도 있다... 근데 어째보면 다 기본 기능이다)
 
-3. notice_list.jsp : 해왔던거
-   - <jsp:include page="header.jsp" />,랑 <jsp:include page="footer.jsp" /> 를 대체해서 넣는다(<jsp:include page="quicklink.jsp" />)도 있어요~)
+원래 SQL쿼리문에 FROM board를 여기서 쓰는 보드DB 이름으로 바꿔야 한다.(from tourist_board)
+
+3. notice_list.jsp : 해왔던거 기초공사
+> <jsp:include page="header.jsp" />,랑 <jsp:include page="footer.jsp" /> 를 대체해서 넣는다(<jsp:include page="quicklink.jsp" />)도 있어요~)
 
 # 1-1. 목록 보기 with 검색
 notice_list.jsp
