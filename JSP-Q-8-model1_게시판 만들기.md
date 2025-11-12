@@ -8,7 +8,7 @@
 
 # 0. 밑준비 : SQL
 
-1. 게시판 db를 만든다
+1. 게시판 db를 SQL에 만든다
 ```sql
 CREATE TABLE TOURIST_BOARD(
 	num NUMBER PRIMARY KEY,
