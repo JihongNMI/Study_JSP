@@ -113,8 +113,92 @@ tourist에서는 header.jsp에 있으니 이건 안 넣어도 되고, 추후에 
 
 원래는 번호 작성자 작성일 조회수 제목 내용 이 구성인데
 
-여기서는 제목 작성일 조회수 내용만 나오면 되고, 그거에 맞춰서 구성 수정을 해야한다
+여기서는 제목 작성일 조회수 내용만 나오면 되고, 그거에 맞춰서 구성 수정을 해야한다 
+>덜 고친 상태에선 조회수 : aaa 이렇게 나옴
+>>조회수 : <span> <%=dto.getVisitcount() %> </span> 했는데도 이렇게 나오는데??
+>>>그건 BoardDAO를 손봐야되는데
+```java
 
+    // 결과셋에 어떤 값이 들어있는지 확인
+    System.out.println("=== ResultSet 컬럼 값 테스트 ===");
+    for (int i = 1; i <= rs.getMetaData().getColumnCount(); i++) {
+        String columnName = rs.getMetaData().getColumnName(i);
+        String columnValue = rs.getString(i);
+        System.out.println(i + "번 컬럼 (" + columnName + "): " + columnValue);
+    }
+    System.out.println("================================");
+
+```
+로 확인
+
+```
+1번 컬럼 (NUM): 3
+2번 컬럼 (TITLE): 추석 연휴 티켓/투어 배송 및 직접 수령 안내
+3번 컬럼 (CONTENT): 내용3
+4번 컬럼 (POSTDATE): 2025-11-11 14:32:36
+5번 컬럼 (VISITCOUNT): 7
+6번 컬럼 (ID): aaa
+7번 컬럼 (NAME): AAA
+```
+
+그래서 뭐가 문제였냐면
+```java
+public BoardDTO selectView(String num) {
+		BoardDTO dto = new BoardDTO();
+		String query = "SELECT B.*, M.name "
+				+ " FROM tourist_member M INNER JOIN tourist_board B "
+				+ " ON M.email_id = B.id "
+				+ " WHERE num=?";
+		try {
+			psmt = con.prepareStatement(query);
+			psmt.setString(1, num);
+			rs = psmt.executeQuery();
+			if(rs.next()) {
+				dto.setNum(rs.getString(1));
+				dto.setTitle(rs.getString(2));
+				dto.setContent(rs.getString("content"));
+				dto.setPostdate(rs.getDate("postdate"));
+				dto.setId(rs.getString("id"));
+				dto.setVisitcount(rs.getString(6));
+				// dto.setName(rs.getString("name"));
+				
+			}
+			
+			
+			// 확인차
+			
+			    System.out.println("=== ResultSet 컬럼 값 테스트 ===");
+			    for (int i = 1; i <= rs.getMetaData().getColumnCount(); i++) {
+			        String columnName = rs.getMetaData().getColumnName(i);
+			        String columnValue = rs.getString(i);
+			        System.out.println(i + "번 컬럼 (" + columnName + "): " + columnValue);
+			    }
+			    System.out.println("================================");
+			
+			// 확인차
+			
+			
+		}catch(Exception e) {
+			System.out.println("게시물 상세보기 중 예외 발생");
+			e.printStackTrace();
+		}
+		return dto;
+```
+
+지금 실습이라서인지 rs.getString(번호)랑 rs.getString(컬럼명)이랑 섞여있는데
+
+컬럼명이 안전하네
+
+정 안되면 이런식으로 프린트해서 확인해서 고치면 맞는듯
+
+결론
+
+```java
+dto.setVisitcount(rs.getString("visitcount"));
+아니면
+dto.setVisitcount(rs.getString(5)); 6에서 5로
+
+```
 링크 파일 이름이라던가 그런것도 말이지
 
 ---
