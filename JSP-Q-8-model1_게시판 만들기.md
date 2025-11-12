@@ -18,8 +18,8 @@ CREATE TABLE TOURIST_BOARD(
 	visitcount NUMBER(6),
 	id VARCHAR2(100) NOT NULL
 );
-
 ```
+
 2. 외부키를 설정한다(회원정보db의 id(주키)에 외래키로서 연결함 -> 이 안에 있는 아이디들만 가능하게 만듬)
 ```sql
 ALTER TABLE TOURIST_BOARD
