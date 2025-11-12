@@ -326,6 +326,6 @@ loginProcess.jsp
 
 ✔ 구조 : jsp의 id, pw -> loginprocess.jsp 의 request.getparameter(id,pw) -> DAO안에 getmemberDTO로 SQL조회 후 일치하면 그 값을 반환 -> 일치하면 세션에 id, 이름을 넣고 redirect
 
-login.jsp는 수정할 필요가 없다 : value는 자동완성(미리 적어놓는 값)이고, id, pw비교는 name으로 하니까.
+login.jsp는 수정할 필요가 없다 : value가 헷깔렸는데, 이건 자동완성(미리 적어놓는 값)이고, id, pw비교는 name으로 하니까.
 
 # 4. 수정하기
