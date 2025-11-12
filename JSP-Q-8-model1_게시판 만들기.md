@@ -335,8 +335,50 @@ login.jsp는 수정할 필요가 없다 : value가 헷깔렸는데, 이건 자�
 # 2-2. 글쓰기
 글쓰기하는것도 있다. notice_add.jsp, noticeAddProcess.jsp를 만들고, notice_list.jsp에 버튼을 추가해서 연결. (원래 BoardDAO안에 기능 넣어야되는데 이건 복붙해옴)
 
+notice_add.jsp : 작성하는 페이지임
+
+1. head안에 제목이나 내용을 다 입력하는거 확인하는 스크립트를 추가
+```
+<script type="text/javascript">
+function validateForm(form){
+	if(form.title.value == ""){
+		alert("제목을 입력하세요.");
+		form.title.focus();
+		return false;
+	}
+	if(form.content.value == ""){
+		alert("내용을 입력하세요.");
+		form.content.focus();
+		return false;
+	}
+}
+</script>
+```
+
+2. 로그인한사람 안한사람 구분하는것 : 이건 실습에서는 link.jsp라고 만들었는데 여기서는 include header.jsp로 퉁치자
+
+3. form 태그 안에 스크립트 실행을 추가 onsubmit="return validateForm(this);" . name은 잘 맞아있으니 패스
+
+4. 더 없지? 아 있다 : <%@ include file="IsLoggedIn.jsp" %> 이걸 맨 처음에 넣어서 로그인되어있는지 확인
+
+---
+
+noticeAddProcess.jsp
+1. 이건 사실 isLoggedin.jsp이라고, 로그인되어있는지 안되어있는지 확인하는 JSFunction이 들어있으니 이걸 만들어놓고(복사) import해옴
+> 아 그럼 로그인 확인하는 <%@ include file="IsLoggedIn.jsp" %>은 쓰는 곳이랑 쓰는 프로세스 두군데 다 들어가있네요
+> > 그 거 리다이렉트 페이지 이름도 수정해
 
 
-
+notice_list.jsp
+1.버튼 추가. 이건 사실 음 주변에 맞춰서 만들어야되는데
+```
+<table border="1" width="90%">
+		<tr align="right">
+			<td>
+			<button type="button" onclick="location.href='notice_add.jsp';">글쓰기</button>
+			</td>
+		</tr>
+	</table>
+```
 
 # 4. 수정하기
