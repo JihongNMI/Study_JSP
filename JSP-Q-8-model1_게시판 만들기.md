@@ -101,6 +101,7 @@ String query = "SELECT B.*, M.name "
 				+ " ON M.email_id = B.id "  여기 email_id로
 				+ " WHERE num=?";
 ```
+>✨여기서 유추할 수 있는 것 : "SELECT B.*, M.name " 가 출력 순서고 결과임(
 
 notice_view.jsp
 로그인 정보 관련은 예제에선 <jsp:include page="../common/Link.jsp" />로 표현되어 있는데, 
