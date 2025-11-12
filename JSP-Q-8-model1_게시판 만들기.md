@@ -76,9 +76,9 @@ BoardDTO, BoardDAO : java 밑에 model1 패키지 만들고 BoardDTO, BoardDAO �
 
 # 1-1. 목록 보기 with 검색
 notice_list.jsp
-   - 🤷‍♀️문제 : 도데체 게시판 표를 어떻게 만들지? 궁금했는데, 별거 아니고 table 안에, thead는 먼저 만들고, tbody를 반복문으로 만드는 것이였다. 이 부분을 수정하면 된다.
-     - for(BoardDTO dto : boardLists){ 로 해서 <%=dto.getNum()%>"> <%=dto.getTitle() %> 이런 식으로 만든다. 자세한건 코드 참고...
-   - 그리고 맨 위에 import하고 선언하는거 있는데 이것도 빼먹지 말고...사실 이거 먼저 만들어야 겠지
+- 🤷‍♀️문제 : 도데체 게시판 표를 어떻게 만들지? 궁금했는데, 별거 아니고 table 안에, thead는 먼저 만들고, tbody를 반복문으로 만드는 것이였다. 이 부분을 수정하면 된다.
+  - for(BoardDTO dto : boardLists){ 로 해서 <%=dto.getNum()%>"> <%=dto.getTitle() %> 이런 식으로 만든다. 자세한건 코드 참고...
+- 그리고 맨 위에 import하고 선언하는거 있는데 이것도 빼먹지 말고...사실 이거 먼저 만들어야 겠지
 
 여기까지가 1. 목록 보기 기능이다. 
 
@@ -106,9 +106,7 @@ String query = "SELECT B.*, M.name "
 >✨여기서 유추할 수 있는 것 : "SELECT B.*, M.name " 가 출력 순서고 결과임(
 
 notice_view.jsp
-로그인 정보 관련은 예제에선 <jsp:include page="../common/Link.jsp" />로 표현되어 있는데, 
-
-tourist에서는 header.jsp에 있으니 이건 안 넣어도 되고, 추후에 거길 고쳐야 한다.
+- 로그인 정보 관련은 예제에선 <jsp:include page="../common/Link.jsp" />로 표현되어 있는데, tourist에서는 header.jsp에 있으니 이건 안 넣어도 되고, 추후에 거길 고쳐야 한다.
 
 첫 코드를 복붙해오는데, 구조가 이렇다. [일련번호 받고 DAO생성, 조회수 증가, 일련번호로 DB에서 내용 가져오기, DB닫기]
 
