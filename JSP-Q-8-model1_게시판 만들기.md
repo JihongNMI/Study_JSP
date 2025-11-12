@@ -397,4 +397,9 @@ notice_list.jsp
 
 # 4. 수정하기
 
+## 4-1. 버튼이 숨겨져 있는 건에 대해서
+
+사실 이미 복붙을 해놨는데 왜 안보이냐면 : 똑같은 이유인데
+> <%if(session.getAttribute("UserId") != null && session.getAttribute("UserId").toString().equals(dto.getId())){%>
+> > 마찬가지로 user_id로 고친다
 
