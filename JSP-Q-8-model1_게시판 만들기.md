@@ -387,8 +387,10 @@ notice_list.jsp
 
 이제 됐나?
 
-
 ✔noticeAddProcess.jsp에서 에러가 났어요
+> 이 페이지에서도 dto.setId(session.getAttribute("UserId").toString());라고 세션을 이용하니까 user_id로 통일합니다.
+
+이제야 된 것 같네요.......
 
 # 4. 수정하기
 
