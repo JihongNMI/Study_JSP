@@ -196,9 +196,12 @@ public BoardDTO selectView(String num) {
 ```java
 dto.setVisitcount(rs.getString("visitcount"));
 아니면
-dto.setVisitcount(rs.getString(5)); 6에서 5로
+dto.setVisitcount(rs.getString(5)); 
 
 ```
+6에서 5로 고치면 된다
+
+
 링크 파일 이름이라던가 그런것도 말이지
 
 ---
