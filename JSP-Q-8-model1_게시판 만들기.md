@@ -210,7 +210,7 @@ dto.setVisitcount(rs.getString(5)); 6에서 5로 수정
 ---
 
 
-# 2. 글쓰기 with 로그인 public int insertWrite(BoardDTO dto), public void updateVisitCount(String num)
+# 2. 글쓰기 with 로그인 public int insertWrite(BoardDTO dto)
 # 2-1. 로그인 처리
 login.jsp를 손 봐야 한다. 그전에 loginProcess.jsp도 만들고, MemberDAO랑 MemberDTO클래스도 만들어야 한다.
 아. 그리고 이건 로그인 처리고
@@ -451,4 +451,4 @@ edit는 기본적으로 원래 notice_view.jsp를 토대로 해서, 필요없는
 
 7. 아 그거 뭐더라..... input이랑 textarea가 css설정이 되어있어야겠지
 
-# 5. 삭제
+# 5. 삭제 : public int deletePost(BoardDTO dto)
