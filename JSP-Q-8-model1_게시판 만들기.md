@@ -59,6 +59,7 @@ BoardDTO, BoardDAO : java 밑에 model1 패키지 만들고 BoardDTO, BoardDAO �
 
 1. DTO : 에서는 쓰는 변수 정리(게시판DB 구성 칼럼 이름)하면 된다. 복사해온 파일에선 name 쓰는데 여긴 없어서 name 관련해서 지웠다.
 2. DAO : DAO안에
+```
    - selectCount : 게시물 개수 세기. 왜 세느냐? 10개 있다고 치면 검색했을 때 5개가 나오게 다시 세야하기 때문
    - selectList : 게시물 목록 가져오기. 얘도 검색하면 따로 SQL 쿼리로 가져오게 하는 기능이 포함됨, jsp에 for문써서 테이블 만드는 것도 해야함
    - insertWrite : 게시물 글 쓰는 기능
@@ -66,7 +67,7 @@ BoardDTO, BoardDAO : java 밑에 model1 패키지 만들고 BoardDTO, BoardDAO �
    - updateVisitCount : 조회수 1 증가 기능
    - updateEdit : 게시물 글 편집 기능
    - deletePost : 게시물 글 삭제 기능
-
+```
 가 있다.(많이도 있다... 근데 어째보면 다 기본 기능이다)
 
 원래 SQL쿼리문에 FROM board를 여기서 쓰는 보드DB 이름으로 바꿔야 한다.(from tourist_board)
