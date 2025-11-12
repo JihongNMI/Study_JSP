@@ -54,11 +54,10 @@ VALUES (seq_tourist_board_num.nextval, '추석 연휴 티켓/투어 배송 및 �
 ---
 
 # 0. 밑준비 : jsp
-DTO, DAO : java 밑에 model1 패키지 만들고
-1. BoardDTO 를 복붙
-2. BoardDAO 를 복붙
+BoardDTO, BoardDAO : java 밑에 model1 패키지 만들고 BoardDTO, BoardDAO 를 복붙해서 커스텀
+> MemberDAO랑 MemberDTO도 나중에 만든다. 로그인 id 조회도 하고 이걸 session에 넣어서 글쓰기 관리도 한다
 
-1. DTO : 에서는 쓰는 변수 정리(게시판DB 구성 칼럼)하면 된다. 복사한건 name 쓰는데 여긴 없어서 name 관련해서 지웠다.
+1. DTO : 에서는 쓰는 변수 정리(게시판DB 구성 칼럼 이름)하면 된다. 복사해온 파일에선 name 쓰는데 여긴 없어서 name 관련해서 지웠다.
 2. DAO : DAO안에
    - selectCount : 게시물 개수 세기. 왜 세느냐? 10개 있다고 치면 검색했을 때 5개가 나오게 다시 세야하기 때문
    - selectList : 게시물 목록 가져오기. 얘도 검색하면 따로 SQL 쿼리로 가져오게 하는 기능이 포함됨, jsp에 for문써서 테이블 만드는 것도 해야함
