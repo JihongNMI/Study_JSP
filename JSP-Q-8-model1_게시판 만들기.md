@@ -98,7 +98,7 @@ BoardDAO.java
 ```sql
 String query = "SELECT B.*, M.name "
 				+ " FROM tourist_member M INNER JOIN tourist_board B "
-				+ " ON M.email_id = B.id "
+				+ " ON M.email_id = B.id "  여기 email_id로
 				+ " WHERE num=?";
 ```
 
