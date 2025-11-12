@@ -381,4 +381,10 @@ notice_list.jsp
 	</table>
 ```
 
+✔로그인은 되었는데 글이 안써져요ㅗ
+> 기존에 쓰는 loginProcess.jsp의  session.setAttribute("user_id", id);랑, 새로 만든 isLoggedin.jsp의 if(session.getAttribute("UserId") == null){
+> 의 변수가 달라서 그러하니, used_id로 통일해준다
+
+이제 됐나?
+
 # 4. 수정하기
