@@ -75,7 +75,7 @@ BoardDTO, BoardDAO : java 밑에 model1 패키지 만들고 BoardDTO, BoardDAO �
 3. notice_list.jsp : 해왔던거 기초공사
 > <jsp:include page="header.jsp" />,랑 <jsp:include page="footer.jsp" /> 를 대체해서 넣는다(<jsp:include page="quicklink.jsp" />)도 있어요~)
 
-# 1. 목록보기 with 검색
+# 1. 목록보기 with 검색 public int selectCount(Map<String, Object> map), public List<BoardDTO> selectList(Map<String, Object> map)
 
 ## 1-1. 목록 보기 
 notice_list.jsp
@@ -96,7 +96,7 @@ notice_list.jsp
 > select 태그(searchField 값을 받게 함) 추가하니까 잘 됨
 
 
-# 3. 상세보기(순서 좀 바꿈)
+# 3. 상세보기(순서 좀 바꿈) : public BoardDTO selectView(String num), public void updateVisitCount(String num) 
 
 model1.BoardDAO.java
 - 여기서는 이걸 바꿔야 한다 조인하는거 컬럼 이름 틀리지 않았는지 확인
@@ -210,7 +210,7 @@ dto.setVisitcount(rs.getString(5)); 6에서 5로 수정
 ---
 
 
-# 2. 글쓰기 with 로그인
+# 2. 글쓰기 with 로그인 public int insertWrite(BoardDTO dto), public void updateVisitCount(String num)
 # 2-1. 로그인 처리
 login.jsp를 손 봐야 한다. 그전에 loginProcess.jsp도 만들고, MemberDAO랑 MemberDTO클래스도 만들어야 한다.
 아. 그리고 이건 로그인 처리고
@@ -395,7 +395,7 @@ notice_list.jsp
 
 이제야 된 것 같네요.......
 
-# 4. 수정하기
+# 4. 수정하기 - public int updateEdit(BoardDTO dto)
 
 ## 4-1. 버튼이 숨겨져 있는 건에 대해서
 notice_view.jsp
