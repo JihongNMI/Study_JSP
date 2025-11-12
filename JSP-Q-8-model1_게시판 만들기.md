@@ -73,7 +73,7 @@ java 밑에 model1 패키지 만들고
 
 # 1-1. 목록 보기 with 검색
 notice_list.jsp
-   - 도데체 표를 어떻게 생성했는지 궁금했는데, 별거 아니고 table 안에, thead는 먼저 만들고, tbody를 반복문으로 만드는 것이였다. 이 부분을 수정하면 된다.
+   - ✔문제 : 도데체 표를 어떻게 생성했는지? 궁금했는데, 별거 아니고 table 안에, thead는 먼저 만들고, tbody를 반복문으로 만드는 것이였다. 이 부분을 수정하면 된다.
      - for(BoardDTO dto : boardLists){ 로 해서 <%=dto.getNum()%>"> <%=dto.getTitle() %> 이런 식으로 만든다. 자세한건 코드 참고...
    - 그리고 맨 위에 import하고 선언하는거 있는데 이것도 빼먹지 말고...사실 이거 먼저 만들어야 겠지
 
@@ -84,7 +84,7 @@ notice_list.jsp
 
 폼태그 안에 input 텍스트 태그 안에는, **name="searchWord" 추가**하고, 버튼은 **input type="submit"로 한다**
 
-음 왜 안돼지...
+✔문제 : 음 왜 검색이 안돼지... : 제목검색만 하지말고 예제 그대로 제목&내용 검색으로 ㄱㄱ
 
 > 해당 요소가 2개 있다. select 안의 searchField(제목, 내용)이랑 input text 안의 searchWord
 > 원래 없어서 제목만 할려다가 그거 다시 조절해야돼서(그래서 검색 안됐음)
