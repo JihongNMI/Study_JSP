@@ -85,7 +85,7 @@ notice_list.jsp
 
 여기까지가 1. 목록 보기 기능이다. 
 
-# 1-2. 검색은 어떻게하지? : BoardDAO에서 SELECT 쿼리하는걸 jsp로 보여준다
+## 1-2. 검색은 어떻게하지? : BoardDAO에서 SELECT 쿼리하는걸 jsp로 보여준다
 notice_list.jsp
 - 폼태그 안에 input 텍스트 태그 안에는, **name="searchWord" 추가**하고, 버튼은 **input type="submit"로 한다**
 
