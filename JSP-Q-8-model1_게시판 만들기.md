@@ -387,4 +387,9 @@ notice_list.jsp
 
 이제 됐나?
 
+
+✔noticeAddProcess.jsp에서 에러가 났어요
+
 # 4. 수정하기
+
+
