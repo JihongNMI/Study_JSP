@@ -1,8 +1,8 @@
-#  수정방안
+#  Tourist 수정방안
 그러니까... 게시판을 만드는 기능임
 1. 목록 보기 with 검색
-2. 글쓰기 with 로그인
-3. 상세 보기
+2. 글쓰기 with 로그인(loginProcess) plus 로그인 확인(isLoggedin)
+3. 상세 보기(notice_view)
 4. 수정하기
 5. 삭제하기
 
