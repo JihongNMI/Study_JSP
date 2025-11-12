@@ -55,7 +55,7 @@ VALUES (seq_tourist_board_num.nextval, '추석 연휴 티켓/투어 배송 및 �
 
 # 0. 밑준비 : jsp
 BoardDTO, BoardDAO : java 밑에 model1 패키지 만들고 BoardDTO, BoardDAO 를 복붙해서 커스텀
-> MemberDAO랑 MemberDTO도 나중에 만든다. 로그인 id 조회도 하고 이걸 session에 넣어서 글쓰기 관리도 한다
+> java 밑에 member 패키지 안에 MemberDAO랑 MemberDTO도 나중에 만든다. 로그인 id 조회도 하고 이걸 session에 넣어서 글쓰기 관리도 한다
 
 1. DTO : 에서는 쓰는 변수 정리(게시판DB 구성 칼럼 이름)하면 된다. 복사해온 파일에선 name 쓰는데 여긴 없어서 name 관련해서 지웠다.
 2. DAO : DAO안에
@@ -96,7 +96,7 @@ notice_list.jsp
 
 # 3. 상세보기(순서 좀 바꿈)
 
-BoardDAO.java
+model1.BoardDAO.java
 - 여기서는 이걸 바꿔야 한다 조인하는거 컬럼 이름 틀리지 않았는지 확인
 ```sql
 String query = "SELECT B.*, M.name "
@@ -215,7 +215,7 @@ login.jsp를 손 봐야 한다. 그전에 loginProcess.jsp도 만들고, MemberD
 
 나는 loginProcess부터 만들려고 했는데, 순서 따라서 DAO랑 DTO부터 만들자
 
-DAO
+member.MemberDAO.java
 ```java
 package member;
 
