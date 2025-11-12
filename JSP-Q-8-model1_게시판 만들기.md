@@ -210,6 +210,8 @@ dto.setVisitcount(rs.getString(5)); 6에서 5로 수정
 # 2. 글쓰기 with 로그인
 login.jsp를 손 봐야 한다. 그전에 loginProcess.jsp도 만들고, MemberDAO랑 MemberDTO클래스도 만들어야 한다.
 
+나는 loginProcess부터 만들려고 했는데, 순서 따라서 DAO랑 DTO부터 만들자
+
 loginProcess.jsp
 ```
 <!-- 3. loginProcess : 임포트하고   -->
