@@ -449,4 +449,6 @@ edit는 기본적으로 원래 notice_view.jsp를 토대로 해서, 필요없는
 
 그럼 끝난다
 
+7. 아 그거 뭐더라..... input이랑 textarea가 css설정이 되어있어야겠지
+
 # 5. 삭제
