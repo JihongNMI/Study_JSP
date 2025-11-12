@@ -75,7 +75,9 @@ BoardDTO, BoardDAO : java 밑에 model1 패키지 만들고 BoardDTO, BoardDAO �
 3. notice_list.jsp : 해왔던거 기초공사
 > <jsp:include page="header.jsp" />,랑 <jsp:include page="footer.jsp" /> 를 대체해서 넣는다(<jsp:include page="quicklink.jsp" />)도 있어요~)
 
-# 1-1. 목록 보기 with 검색
+# 1. 목록보기 with 검색
+
+## 1-1. 목록 보기 
 notice_list.jsp
 - 🤷‍♀️문제 : 도데체 게시판 표를 어떻게 만들지? 궁금했는데, 별거 아니고 table 안에, thead는 먼저 만들고, tbody를 반복문으로 만드는 것이였다. 이 부분을 수정하면 된다.
   - for(BoardDTO dto : boardLists){ 로 해서 <%=dto.getNum()%>"> <%=dto.getTitle() %> 이런 식으로 만든다. 자세한건 코드 참고...
@@ -83,7 +85,7 @@ notice_list.jsp
 
 여기까지가 1. 목록 보기 기능이다. 
 
-# 1-2. 검색은 어떻게하지?
+# 1-2. 검색은 어떻게하지? : BoardDAO에서 SELECT 쿼리하는걸 jsp로 보여준다
 notice_list.jsp
 - 폼태그 안에 input 텍스트 태그 안에는, **name="searchWord" 추가**하고, 버튼은 **input type="submit"로 한다**
 
