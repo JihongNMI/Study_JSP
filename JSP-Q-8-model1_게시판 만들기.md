@@ -460,4 +460,34 @@ DeleteProcess.jsp
 
 제일 쉬운것같은데 안된다면 음...... 스크립트 아무것도 안되네
 
-생각 : 삭제할 때 사실 hidden인 글번호값도 보내는데 이건 버튼으로 보내는거라서 form안에 들어가있어야 한다...인것도 아닌듯
+생각 : 삭제할 때 사실 hidden인 글번호값도 보내는데 이건 버튼으로 보내는거라서 form안에 들어가있어야 한다...인것도 아닌듯 -> 맞는데요?
+
+스크립트에 삭제를 보면 form 이름이 지정되어있음
+
+```jsp
+<script>
+function deletePost(){
+	// confirm창에서 확인 버튼을 누르면 true를 취소를 누르면 false 반환
+	var confirmed = confirm("정말로 삭제하시겠습니까?");
+	if(confirmed){
+		// form태그 저장
+		var form = document.writeFrm;
+		// method설정 : post,get
+		form.method = "post";
+		// submit시 실행할 페이지 설정
+		form.action = "./DeleteProcess.jsp"
+		// submit실행
+		form.submit();
+	}
+}
+</script>
+
+```
+그래서 name="writeFrm"로 하고(아무데나 상관없는데 input을 감싸는 형태로)
+```jsp
+<form name="writeFrm">
+		<input type="hidden" name="num" value="<%=num %>"/>
+</form>
+```
+
+하면 됨
