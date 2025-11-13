@@ -118,7 +118,7 @@ notice_view.jsp
 원래는 번호 작성자 작성일 조회수 제목 내용 이 구성인데
 
 여기서는 제목 작성일 조회수 내용만 나오면 되고, 그거에 맞춰서 구성 수정을 해야한다 
->✔문제 발생 : 덜 고친 상태에선 조회수 : aaa 이렇게 나옴
+>🤷‍♀️문제 발생 : 덜 고친 상태에선 조회수 : aaa 이렇게 나옴
 >>조회수 : <span> <%=dto.getVisitcount() %> </span> 했는데도 이렇게 나오는데??
 >>>그건 BoardDAO를 손봐야되는데
 ```java
@@ -329,7 +329,7 @@ loginProcess.jsp
 %>
 ```
 
-✔ 구조 : jsp의 id, pw -> loginprocess.jsp 의 request.getparameter(id,pw) -> DAO안에 getmemberDTO로 SQL조회 후 일치하면 그 값을 반환 -> 일치하면 세션에 id, 이름을 넣고 redirect
+🤷‍♀️ 구조 : jsp의 id, pw -> loginprocess.jsp 의 request.getparameter(id,pw) -> DAO안에 getmemberDTO로 SQL조회 후 일치하면 그 값을 반환 -> 일치하면 세션에 id, 이름을 넣고 redirect
 
 login.jsp는 수정할 필요가 없다 : value가 헷깔렸는데, 이건 자동완성(미리 적어놓는 값)이고, id, pw비교는 name으로 하니까.
 
@@ -384,13 +384,13 @@ notice_list.jsp
 	</table>
 ```
 
-✔로그인은 되었는데 글이 안써져요ㅗ
+🤷‍♀️로그인은 되었는데 글이 안써져요ㅗ
 > 기존에 쓰는 loginProcess.jsp의  session.setAttribute("user_id", id);랑, 새로 만든 isLoggedin.jsp의 if(session.getAttribute("UserId") == null){
 > 의 변수가 달라서 그러하니, used_id로 통일해준다
 
 이제 됐나?
 
-✔noticeAddProcess.jsp에서 에러가 났어요
+🤷‍♀️noticeAddProcess.jsp에서 에러가 났어요
 > 이 페이지에서도 dto.setId(session.getAttribute("UserId").toString());라고 세션을 이용하니까 user_id로 통일합니다.
 
 이제야 된 것 같네요.......
@@ -452,3 +452,12 @@ edit는 기본적으로 원래 notice_view.jsp를 토대로 해서, 필요없는
 7. 아 그거 뭐더라..... input이랑 textarea가 css설정이 되어있어야겠지
 
 # 5. 삭제 : public int deletePost(BoardDTO dto)
+
+DeleteProcess.jsp
+만 연결해주면 된다
+
+🤷‍♀️안되는데?
+
+제일 쉬운것같은데 안된다면 음......
+
+생각 : 삭제할 때 사실 hidden인 글번호값도 보내는데 이건 버튼으로 보내는거라서 form안에 들어가있어야 한다...인것도 아닌듯
