@@ -1,4 +1,5 @@
-# 1. EL ${ dto.num } 등 / JSTL <c:choose> 등 / 고쳤는데 안 돼
+# 1.  EL에서 DB 데이터를 읽게 하려면 “JSP 속성으로 올려주기”
+## EL ${ dto.num } 등 / JSTL <c:choose> 등 / 고쳤는데 안 돼
 
 자 일단 상황을 정리하고 다시 접근해보자
 원 코드가 이것이고
