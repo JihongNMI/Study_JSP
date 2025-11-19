@@ -1,3 +1,6 @@
+# 서블릿 : 우리가 해왔던 MemberDAO DTO BoardDAO BoardDTO
+근데 음~
+
 # 그러니까 구조가...
 Link.jsp -> <a href="../06/LoginForm.jsp">로그인</a> -> 로그인폼
 
