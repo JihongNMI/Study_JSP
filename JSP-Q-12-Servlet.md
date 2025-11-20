@@ -158,5 +158,10 @@ Link_servlet.jsp -> <a href="/MustHaveJSP/login.do">로그인</a> -> 할 차례
 4. doG랑 doP 자동완성, super 삭제
 5. 값이 이상할 때 확인하는법
 > 	<p>게시물 작성자 ID(dto.id): ${dto.id}</p>, 	<p>세션 UserId: ${UserId}</p>
-6. ㅁㅁㅁ
-7. 
+6. @WebServlet("/edit.do")
+7. Edit.jsp 내용을 doG에 옮기고 req수정 DAO삭제 dao->service
+8. selectView->getBoard
+9. PrintWriter out = resp.getWriter(); 		resp.setContentType("html/text;charset=UTF-8");
+10. session.getAttribute-> req.getSession().getAttribute
+11. dao.close();삭제
+12. ... 이런 느낌
