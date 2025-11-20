@@ -28,10 +28,12 @@ Link_servlet.jsp -> <a href="/MustHaveJSP/login.do">로그인</a> -> 할 차례
 
 ---
 # 순서
-
+- 리스트
+- 뷰
+- 로그인
 - 글 추가
-controller : doGet(화면출력용), doPost(데이터저장용)
-service : 메서드 추가, 게시글 저장
+> controller : doGet(화면출력용), doPost(데이터저장용)
+> service : 메서드 추가, 게시글 저장
 
 - 글 수정
 - 글 삭제
