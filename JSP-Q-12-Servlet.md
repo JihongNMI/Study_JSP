@@ -149,3 +149,14 @@ Link_servlet.jsp -> <a href="/MustHaveJSP/login.do">로그인</a> -> 할 차례
 “write → DB → list”까지 한눈에 보여주고, Model1 구조와 비교해서 이해 쉽게 만들어줄 수도 있습니다.
 
 그림으로 보고 싶나요?
+
+---
+
+1. extends HttpServlet 자동완성
+2. Add Default serialVersion ID
+3. BoardService service = new BoardService();
+4. doG랑 doP 자동완성, super 삭제
+5. 값이 이상할 때 확인하는법
+> 	<p>게시물 작성자 ID(dto.id): ${dto.id}</p>, 	<p>세션 UserId: ${UserId}</p>
+6. ㅁㅁㅁ
+7. 
