@@ -27,7 +27,7 @@ Link_servlet.jsp -> <a href="/MustHaveJSP/login.do">로그인</a> -> 할 차례
 
 
 ---
-# 순서
+# 순서 : 프로세스를 do로 옮긴다(Controller + Service)
 - 리스트
 - 뷰
 - 로그인
