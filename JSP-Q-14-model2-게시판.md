@@ -96,7 +96,7 @@ public static String renameFile(String sDirectory, String fileName) {
 
 **파일을 새로 첨부하지 않고 수정할 때** `renameFile`이 실행되지 않거나, 실행되더라도 안전하게 빈 문자열을 처리하여 `StringIndexOutOfBoundsException`이 더 이상 발생하지 않을 것입니다.
 
-# 업로드된 파일이 있는 글을 업로드가 아닌 글로 수정했을 경우에 db랑 업로드된 파일은 어떻게 되는거지? 이 코드에서
+# 2-1. 업로드된 파일이 있는 글을 업로드가 아닌 글로 수정했을 경우에 db랑 업로드된 파일은 어떻게 되는거지? 이 코드에서
 
 제공해주신 `EditController.java` 코드 기준으로, **업로드된 파일이 있는 글을 파일을 첨부하지 않은 글(업로드가 없는 글)로 수정했을 때** 데이터베이스(DB)와 서버에 업로드된 파일의 상태는 다음과 같이 처리됩니다.
 
