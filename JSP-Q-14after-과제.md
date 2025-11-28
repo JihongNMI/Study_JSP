@@ -1,3 +1,6 @@
+# 2025-11-25 ~ 27 3일간
+
+
 2025-11-25 
 # 1. 9~11시 : 맨 처음 무료 템플릿을 찾기가 어렵다 
 무료 템플릿 자체는 많이 있는데 일회성이 아니고 지속적으로 개인적으로도 사용하고 싶어서
@@ -37,9 +40,7 @@ ojdbc11은 db용이고, jakarta.servlet.jsp.jstl-api-3.0.0랑 jakarta.servlet.js
 web.xml을 설정, 설정 내용은 로그인 세션 시간, UTF-8
 > 이것도 까먹고 있었는데 오라클 로그인 어떻게 하지?? -> server.xml에서 한다
 
-
 /WEB-INF/common/navbar.jsp 이런식으로 구성요소들을 모아서 절대경로로 설정
-
 
 # 5. 15시~ : dto dao 등 정리
 
@@ -56,3 +57,8 @@ web.xml을 설정, 설정 내용은 로그인 세션 시간, UTF-8
 # 2. 10시~ : form 수정, BoardDAO BOardDTO
 
 form의 각종 속성(form의 post, button의 submit
+
+
+2025-11-27
+# 1. 9시~ 빼먹은거 처리, 안되는 문제 해결(ㅜㅜ), 중복된 코드 처리, ppt작성
+
