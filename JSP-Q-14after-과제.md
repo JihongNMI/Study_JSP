@@ -27,7 +27,7 @@ head, 윗단에 nav, 왼쪽 가운데 오른쪽, 푸터, 스크립트 순이였�
 
 ## 3. 12시~ include jsp랑 라이브러리 넣는 작업
 아~ 각 부분(nav, left column, right column, footer, 그리고 javascript까지도)을 분리해서 include하는 게 있었다.
-> 기억 속에서 사라져 있었다
+> 기억 속에서 사라져 있었다 <jsp:include page="/WEB-INF/common/head_tag.jsp" />
  
 그래서 이것들 작업함.
 
