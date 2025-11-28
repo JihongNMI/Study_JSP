@@ -10,7 +10,7 @@
 > https://all-free-download.com/free-website-templates/download/frozen_age_6889120.html
 
 하지만 역시 반응성이 있어야 한다고 생각했다.
-> 반응성 웹이 기억속에서 사라져있었다...
+> 기억속에서 사라져있었다...반응성 웹이 
 
 Responsive free html 이런걸로 열심히 검색했다
 > 로그인폼도 같이 있는데가 좋은데 잘 안나오더라
@@ -27,7 +27,7 @@ head, 윗단에 nav, 왼쪽 가운데 오른쪽, 푸터, 스크립트 순이였�
 
 ## 3. 12시~ include jsp랑 라이브러리 넣는 작업
 아~ 각 부분(nav, left column, right column, footer, 그리고 javascript까지도)을 분리해서 include하는 게 있었다.
-> 기억 속에서 사라져 있었다 <jsp:include page="/WEB-INF/common/head_tag.jsp" />
+> 기억속에서 사라져있었다...<jsp:include page="/WEB-INF/common/head_tag.jsp" />
  
 그래서 이것들 작업함.
 
@@ -38,7 +38,7 @@ ojdbc11은 db용이고, jakarta.servlet.jsp.jstl-api-3.0.0랑 jakarta.servlet.js
 
 ## 4. 14시~ : xml설정, 절대경로 설정
 web.xml을 설정, 설정 내용은 로그인 세션 시간, UTF-8
-> 이것도 까먹고 있었는데 오라클 로그인 어떻게 하지?? -> server.xml에서 한다
+> 기억속에서 사라져있었다...오라클 로그인?? -> server.xml에서 한다
 
 /WEB-INF/common/navbar.jsp 이런식으로 구성요소들을 모아서 절대경로로 설정
 
@@ -57,12 +57,18 @@ web.xml을 설정, 설정 내용은 로그인 세션 시간, UTF-8
 
 ## 2. 10시~ : form 수정, BoardDAO BOardDTO
 
-form의 각종 속성(form의 post, button의 submit
+form의 각종 속성(form의 post, button의 submit 등) 조정
+> 기억속에서 사라져있었다...name 속성이 request로 연결된다는 걸
 
 
 # 2025-11-27
 
 ## 1. 9시~ 빼먹은거 처리, 안되는 문제 해결(ㅜㅜ), 중복된 코드 처리, ppt작성
+
+## 안되는 문제 해결(ㅜㅜ) : 루트로 들어가면 list.do로 리다이렉트가 안되서 게시판을 읽을 수 없는 문제
 근데 제출하고 난 다음날 또 빠진게 있긴 하더라. server.xml 뿐 아니고, context.xml도 해서 db연결 해야
+
+## 중복된 코드 처리
+DAO코드가 2군데 써져있어서 황당했는데 아 이제야 이게 그런거구나 하고 느낌
 
 아무튼 그 때 못했던 걸 이제 하게 되서 기쁘네용(근데 아직 진짜 원하는 수준이랑 비교하면 미완성임)
